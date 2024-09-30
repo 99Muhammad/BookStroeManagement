@@ -1,0 +1,29 @@
+﻿@model BookStroeManagement.Models.Book
+
+<div class="formStyle">
+        <label>
+            <span>Book Title :</span>
+            <input asp-for="@Model.Title" />
+        </label>
+
+
+        <label>
+            <span>Author :</span>
+            <input asp-for="@Model.Author" />
+        </label>
+
+        <label>
+            <span>Price : </span>
+            <input asp-for="@Model.Price" />
+        </label>
+
+    <label>
+        <span>Genre : </span>
+        <input asp-for="@Model.Genre" />
+    </label>
+
+    </div>
+
+    <div asp-validation-summary="All"></div>
+
+    <button type="submit">submit</button>

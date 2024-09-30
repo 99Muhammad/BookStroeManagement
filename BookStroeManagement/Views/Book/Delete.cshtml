@@ -1,0 +1,18 @@
+﻿@model BookStroeManagement.Models.Book
+
+<h2>Are you sure you want to delete the book: "@Model.Title"?</h2>
+
+<div>
+    <h1>Book Details</h1>
+
+    <h3>Book Title: @Model.Title</h3>
+    <h3>Author: @Model.Author</h3>
+    <h3>Price: @Model.Price</h3>
+    <h3>Genre: @Model.Genre</h3>
+</div>
+
+<form method="post" asp-action="Delete" asp-controller="Book">
+    <input type="hidden" name="BookName" value="@Model.Title" />
+    <button type="submit">Yes, Delete</button>
+    <a asp-action="Index">Cancel</a>
+</form>

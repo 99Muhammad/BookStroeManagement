@@ -1,0 +1,41 @@
+﻿@model  IEnumerable<Book>
+@* 
+    <ul>
+    @foreach (var Book in Model)
+    {
+        @* <li>  <a href="/Home/GetDepartment?employeeName=@employee.Name">@employee.Name</a></li> 
+        
+          @*   <li>  <a asp-controller="Book" asp-action="Index" asp-route-employeeName="@Book.Title">@Book.Title</a></li>
+            <li>  <a asp-controller="Book" asp-action="Index" asp-route-employeeName="@Book.Author">@Book.Author</a></li>
+ 
+         <li> @Html.ActionLink(employee.Name, "GetDepartment", new { employeeName = employee.Name, employeeEmail = employee.Email })</li> 
+    }
+   
+</ul> *@
+
+
+<table>
+
+    <thead>
+        <tr>
+            <th>BookID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Price</th>
+            <th>Genre</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.BookID</td>
+                <td>@book.Title</td>
+                <td>@book.Author</td>
+                <td>@book.Price</td>
+                <td>@book.Genre</td>
+            </tr>
+        }
+    </tbody>
+
+</table>

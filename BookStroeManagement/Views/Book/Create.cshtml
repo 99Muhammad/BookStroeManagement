@@ -1,0 +1,35 @@
+﻿@model BookStroeManagement.Models.Book
+
+<h1> Add a new book</h1>
+
+<form method="post" asp-controller="Book" asp-action="Create">  
+    <partial name="AddEdit_BookForm">
+@* <div>
+        <label>
+            <span>Book Title :</span>
+            <input asp-for="@Model.Title" />
+        </label>
+
+
+        <label>
+            <span>Author :</span>
+            <input asp-for="@Model.Author" />
+        </label>
+
+        <label>
+            <span>Price : </span>
+            <input asp-for="@Model.Price" />
+        </label>
+
+        <label>
+            <span>Genre :</span>
+            <input type="checkbox" asp-for="@Model.Genre" />
+        </label>
+
+    </div>
+
+        <div asp-validation-summary="All"></div>  
+
+      <button type="submit">submit</button>  *@
+
+    </form> 

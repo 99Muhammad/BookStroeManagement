@@ -1,3 +1,8 @@
+using BookStroeManagement.Data;
+using BookStroeManagement.Repositories.Interfacees;
+using BookStroeManagement.Repositories.Services;
+using Microsoft.EntityFrameworkCore;
+
 namespace BookStroeManagement
 {
     public class Program
@@ -6,8 +11,16 @@ namespace BookStroeManagement
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            
+            builder.Services.AddDbContext<BookDbContext>(options =>
+            options.UseSqlServer(builder.Configuration.GetConnectionString("constr")));
+
+
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            //builder.Services.AddControllers();
+            builder.Services.AddScoped<IBook, BookService>();
 
             var app = builder.Build();
 
@@ -30,7 +43,11 @@ namespace BookStroeManagement
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
+             
+
             app.Run();
+
+
         }
     }
 }
